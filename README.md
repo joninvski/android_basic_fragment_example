@@ -1,11 +1,33 @@
+Android Basic Fragment Example
+==============================
+
+Simple example of an activity using two fragments.
+
+If there's space the screen is split in half and the two fragments are shown simultaneously
+
+[![two fragment screenshot](https://github.com/joninvski/android_basic_fragment_example/raw/master/images/app.png)]
+
+
+Compile
+-------
+
+    # Optional
+    ANDROID_HOME=/home/.../android/sdk; export ANDROID_HOME
+    ./gradlew compileDebug
+    
+Test
+----
+
+    # Make sure emulator is running or connected to real device
+    ./gradlew connectedInstrumentTest
+    
+
+
 Code highlights
-===============
+---------------
 
-In the Main Activity
---------------------
+On the activity's onCreate
 
-    onCreate()
-        ...
 
         if (!isInTwoPaneMode())
             ...
@@ -20,6 +42,9 @@ In the Main Activity
             // Otherwise, save a reference to the FeedFragment for later use
             mFeedFragment = (FeedFragment) getFragmentManager().findFragmentById(R.id.feed_frag);
 
+
+
+ On the activity's onItemSelected
 
 
     onItemSelected(int position) /* Clicked one of the twitter accounts */
