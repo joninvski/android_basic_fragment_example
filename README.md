@@ -5,7 +5,7 @@ Simple example of an activity using two fragments.
 
 If there's space the screen is split in half and the two fragments are shown simultaneously
 
-[![two fragment screenshot](https://github.com/joninvski/android_basic_fragment_example/raw/master/images/app.png)]
+![two fragment screenshot](https://github.com/joninvski/android_basic_fragment_example/raw/master/images/app.png)
 
 
 Compile
