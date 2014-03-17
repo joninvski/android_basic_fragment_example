@@ -25,8 +25,46 @@ Test
 Code highlights
 ---------------
 
-On the activity's onCreate
+Layouts are defined as follows:
 
+    * In small screens res/layout/main\_activity.xml
+
+        <?xml version="1.0" encoding="utf-8"?>
+        <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+    * In large screen res/layout-large/main\_activity.xml
+
+        <?xml version="1.0" encoding="utf-8"?>
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/frags"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:baselineAligned="false">
+
+            <fragment
+                android:id="@+id/friends_frag"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                class="course.labs.fragmentslab.FriendsFragment" />
+
+            <fragment
+                android:id="@+id/feed_frag"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                class="course.labs.fragmentslab.FeedFragment" />
+
+        </LinearLayout>
+
+
+
+On the activity's onCreate add the fragment to the Fragment Manager if single pane mode.
 
         if (!isInTwoPaneMode())
             ...
@@ -43,8 +81,7 @@ On the activity's onCreate
 
 
 
- On the activity's onItemSelected
-
+ On the activity's onItemSelected:
 
     onItemSelected(int position) /* Clicked one of the twitter accounts */
         ...
@@ -65,5 +102,3 @@ On the activity's onCreate
             // execute transaction now
             getFragmentManager().executePendingTransactions();
         }
-
-
